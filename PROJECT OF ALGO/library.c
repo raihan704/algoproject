@@ -105,18 +105,20 @@ bool isPalindrome(n) {
 	
 	return(reversed==m) ;
 }
+	
 
-bool isPrime(n) {
-	int i ;
-	double s , m;
-	s=sqrt(n) ;
-	for(i=2 ; i<=s ; i++) {
-	m=n%i ;	
-	}
-	return(m!=0) ;
+bool isPrime(int n) {
+    int i;
+    double s, m;
+    if (n < 2) return false;
+    s = sqrt(n); 
+    
+    for (i = 2; i <= s; i++) {
+        m = n % i;
+        if (m == 0) return false; 
+    }
+    return true; 
 }
-
-
 int reverseNumber(int n) {
     int reversed = 0;
     
