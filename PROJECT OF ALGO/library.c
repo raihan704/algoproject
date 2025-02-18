@@ -130,7 +130,7 @@ int reverseNumber(int n) {
     
     return reversed;
 } 
-  //intermediate operations on strings
+  //intermediate operations on numbers
   bool isPerfect(int num) {
     int sum = 0;
     int i = 1; 
