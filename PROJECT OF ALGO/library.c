@@ -117,8 +117,10 @@ bool isPrime(int n) {
         m = n % i;
         if (m == 0) return false; 
     }
-    return true; 
+    
+    return true;
 }
+
 int reverseNumber(int n) {
     int reversed = 0;
     
@@ -338,17 +340,23 @@ bool isDeficient(int num) {
 
 
 int sumOfPrimes(int n) {
-	int sum , i , j ;
-	sum=0;
-	for(i=2 ; i<=n ; i++){
-		for(j=2 ; j<=sqrt(i) ; j++) {
-			if(n%i!=0) {
-				sum=+i ;
-			}
-		}
-	}
-	return(sum);	
+    int sum = 0, i, j, isPrime;
+
+    for (i = 2; i <= n; i++) {
+        isPrime = 1;  
+        for (j = 2; j <= sqrt(i); j++) {
+            if (i % j == 0) {
+                isPrime = 0;  
+                break;
+            }
+        }
+        if (isPrime) {
+            sum += i;  
+        }
+    }
+    return sum;
 }
+
 bool numberPrime(int a) {
 	int i ;
 	for(i=2 ; i <= sqrt(a) ; i++) {
@@ -384,7 +392,7 @@ bool isSmith(int n) {
 	int d, p ;
 	
 	if (isPrime(n)) {
-        // Smith numbers must be prime
+        // Smith numbers must be not not prime
         return false;
     }
     
